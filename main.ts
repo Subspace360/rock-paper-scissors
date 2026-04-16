@@ -220,6 +220,7 @@ game.splash("P1 score = Paper")
 game.splash("P2 score = Scissors")
 game.splash("P3 score = Rock")
 game.splash("When in game, click B to restart")
+let count = game.askForNumber("How much do they need to win?")
 game.splash("Click A to start.")
 startGame()
 forever(function () {
@@ -228,15 +229,15 @@ forever(function () {
     console.log("Rock Score: " + info.player3.score())
 })
 forever(function () {
-    if (info.player1.score() == 100) {
+    if (info.player1.score() == count) {
         game.setGameOverMessage(true, "PAPER WON!")
         game.gameOver(true)
     }
-    if (info.player2.score() == 100) {
+    if (info.player2.score() == count) {
         game.setGameOverMessage(true, "SCISSORS WON!")
         game.gameOver(true)
     }
-    if (info.player3.score() == 100) {
+    if (info.player3.score() == count) {
         game.setGameOverMessage(true, "ROCK WON!")
         game.gameOver(true)
     }
